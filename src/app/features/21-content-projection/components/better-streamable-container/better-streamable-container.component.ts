@@ -15,11 +15,8 @@ const BETTER_STREAM_STATUS = {
 })
 export class BetterStreamableContainerComponent implements OnChanges, OnDestroy {
 
-  @Input() dataStream: Observable<any>;
-
-  @Input() loadingTemplate: TemplateRef<any>;
-  @Input() errorTemplate: TemplateRef<any>;
-  @Input() contentTemplate: TemplateRef<any>;
+  // TODO
+  dataStream: Observable<any>;
 
   private currentStatus = BETTER_STREAM_STATUS.none;
   private allStatuses = BETTER_STREAM_STATUS;
@@ -32,17 +29,7 @@ export class BetterStreamableContainerComponent implements OnChanges, OnDestroy 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.dataStream && this.dataStream) {
       this.clearStream();
-      this.currentStatus = BETTER_STREAM_STATUS.isLoading;
-      this.subscription = this.dataStream.subscribe(
-        (value) => {
-          this.receivedData = value;
-          this.currentStatus = BETTER_STREAM_STATUS.isEmitting;
-        },
-        (error) => {
-          this.receivedError = error;
-          this.currentStatus = BETTER_STREAM_STATUS.errorClosed;
-        }
-      );
+      // TODO: handle new data stream
     }
   }
 

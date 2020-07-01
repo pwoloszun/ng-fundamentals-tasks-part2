@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap, mergeMap, exhaustMap } from 'rxjs/operators';
 
 import { SearchApiService } from '../../../../core/api/search-api.service';
 
@@ -12,12 +13,6 @@ import { SearchApiService } from '../../../../core/api/search-api.service';
 export class MySearchComponent {
 
   searchText = new FormControl('');
-
-  searchResults$ = this.searchText.valueChanges.pipe(
-    debounceTime(400),
-    distinctUntilChanged(),
-    switchMap((query: string) => this.searchApiService.querySearch$(query)),
-  );
 
   constructor(private searchApiService: SearchApiService) {
   }
