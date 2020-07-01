@@ -8,6 +8,7 @@ import { ContentProjectionComponent } from './pages/content-projection/content-p
 import { MyLoaderComponent } from './components/my-loader/my-loader.component';
 import { SimpleStreamableContainerComponent } from './components/simple-streamable-container/simple-streamable-container.component';
 import { BetterStreamableContainerComponent } from './components/better-streamable-container/better-streamable-container.component';
+import { ProjectionExampleComponent } from './components/projection-example/projection-example.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BetterStreamableContainerComponent } from './components/better-streamab
     MyLoaderComponent,
     SimpleStreamableContainerComponent,
     BetterStreamableContainerComponent,
+    ProjectionExampleComponent,
   ],
   imports: [
     CommonModule,
