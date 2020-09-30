@@ -9,6 +9,8 @@ import { MySimpleFormComponent } from './components/my-simple-form/my-simple-for
 import { MyFormValidationTaskComponent } from './components/my-form-validation-task/my-form-validation-task.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormInfoComponent } from './components/form-info/form-info.component';
+import { PizzaCreatorFormComponent } from './components/pizza-creator-form/pizza-creator-form.component';
+import { InterralatedValidationsFormComponent } from './components/interralated-validations-form/interralated-validations-form.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FormInfoComponent } from './components/form-info/form-info.component';
     MySimpleFormComponent,
     MyFormValidationTaskComponent,
     FormInfoComponent,
+    PizzaCreatorFormComponent,
+    InterralatedValidationsFormComponent,
   ],
   imports: [
     CommonModule,

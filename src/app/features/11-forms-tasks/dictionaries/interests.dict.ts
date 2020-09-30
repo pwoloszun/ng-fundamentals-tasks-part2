@@ -1,14 +1,12 @@
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-export const countries = [
-  { id: 'PL', name: 'Poland' },
-  { id: 'UK', name: 'United Kingdom' },
-  { id: 'USA', name: 'USA' },
-  { id: 'RU', name: 'Russia' },
-];
+export interface InterestType {
+  id: string;
+  name: string;
+}
 
-export const interestTypes = [
+export const interestTypesDict: InterestType[] = [
   { id: 'hobby', name: 'Hobbies & Other' },
   { id: 'sport', name: 'Sport' },
   { id: 'culture', name: 'Culture' }
@@ -20,8 +18,8 @@ const interestsMap = {
   culture: ['books', 'films', 'poetry'],
 };
 
-export function getInterestsByType$(interestType): Observable<string[]> {
-  const resultVal = interestsMap[interestType] || [];
+export function getInterestsByType$(interestTypeId: string): Observable<string[]> {
+  const resultVal = interestsMap[interestTypeId] || [];
   return of(resultVal).pipe(
     delay(1200)
   );

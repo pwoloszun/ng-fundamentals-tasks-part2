@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
-import { countries, getInterestsByType$, interestTypes } from './dictionaries';
+import { countriesDict } from '../../dictionaries/countries.dict';
+import { interestTypesDict, getInterestsByType$ } from '../../dictionaries/interests.dict';
 
 @Component({
   selector: 'nts-my-form-validation-task',
@@ -11,18 +12,20 @@ import { countries, getInterestsByType$, interestTypes } from './dictionaries';
 })
 export class MyFormValidationTaskComponent implements OnInit {
 
-  allCountries = countries;
-  allInterestTypes = interestTypes;
+  allCountries = countriesDict;
+  allInterestTypes = interestTypesDict;
 
   selectedInterestsMap = {};
 
   availableInterestLabels = [];
 
-  myForm = null; // TODO
+  myForm = this.fb.group({}); // TODO
+
+  constructor(private fb: FormBuilder) {
+  }
 
   submitHandler(event) {
-    event.preventDefault();
-    const formValue = {}; // TODO
+    const formValue = {}; // TODO: DTO
     console.log('form task value', formValue);
   }
 
