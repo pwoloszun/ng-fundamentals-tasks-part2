@@ -14,7 +14,7 @@ export class PizzaQualityValidator implements AsyncValidator {
     let result = null;
     const extraValues: string[] = extras.value;
     if (extraValues.some((value) => value === 'anchois')) {
-      result = { badPizzaQuality: ['should not include anchois'] }
+      result = { badPizzaQuality: ['should not include anchois'] };
     }
     return of(result).pipe(
       delay(1200),

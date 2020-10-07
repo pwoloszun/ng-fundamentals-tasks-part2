@@ -1,19 +1,8 @@
-<h3>Pizza Creator</h3>
+<h3>b-collection-in-form-example</h3>
 
 <form [formGroup]="pizzaForm"
       (ngSubmit)="submitHandler()"
       class="myForm">
-
-  <div>
-    <select formControlName="pizzaTemplate">
-      <option *ngFor="let template of pizzaTemplates$ | async"
-              [ngValue]="template">
-        {{ template.name }}
-      </option>
-    </select>
-  </div>
-
-  <hr />
 
   <div>
     <input formControlName="name"
@@ -48,20 +37,6 @@
                type="radio" />
         {{ sauce.name }}
       </label>
-    </div>
-  </div>
-
-  <div>
-    Extras:
-    <button mat-raised-button
-            (click)="createExtra()"
-            color="primary">Add</button>
-
-    <div *ngFor="let extrasCtrl of extrasArrayCtrl.controls; let i=index">
-      <input [formControl]="extrasCtrl"
-             type="text" />
-      <button mat-raised-button
-              (click)="removeExtra(i)">Remove</button>
     </div>
   </div>
 

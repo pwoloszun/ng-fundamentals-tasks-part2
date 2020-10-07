@@ -1,4 +1,4 @@
-<h3>Interralated Validations form</h3>
+<h3>e-validations-example form</h3>
 
 <form [formGroup]="myForm"
       (ngSubmit)="submitHandler()"
@@ -9,7 +9,21 @@
       Last Name
       <input formControlName="fullName" />
     </label>
-    <span *ngIf="fullNameCtrl.errors">{{ fullNameCtrl.errors | json }}</span>
+    <span class="my-error"
+          *ngIf="fullNameCtrl.errors">
+      {{ fullNameCtrl.errors | json }}
+    </span>
+  </div>
+
+  <div>
+    <label>
+      Title
+      <input formControlName="title" />
+    </label>
+    <span class="my-error"
+          *ngIf="titleCtrl.errors">
+      {{ titleCtrl.errors | json }}
+    </span>
   </div>
 
   <div>
@@ -29,8 +43,7 @@
   </div>
 
   <div>
-    <button mat-mat-raised-button
-            type="submit">Submit</button>
+    <button type="submit">Submit</button>
   </div>
 </form>
 
