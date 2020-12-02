@@ -13,6 +13,7 @@ import { BCollectionInFormExampleComponent } from './components/b-collection-in-
 import { CInterrelatedCtrlsExampleComponent } from './components/c-interrelated-ctrls-example/c-interrelated-ctrls-example.component';
 import { DDynamicFormsExampleComponent } from './components/d-dynamic-forms-example/d-dynamic-forms-example.component';
 import { EValidationsExampleComponent } from './components/e-validations-example/e-validations-example.component';
+import { FFormValuesExampleComponent } from './components/f-form-values-example/f-form-values-example.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EValidationsExampleComponent } from './components/e-validations-example
     BCollectionInFormExampleComponent,
     CInterrelatedCtrlsExampleComponent,
     DDynamicFormsExampleComponent,
-    EValidationsExampleComponent
+    EValidationsExampleComponent,
+    FFormValuesExampleComponent,
   ],
   imports: [
     CommonModule,

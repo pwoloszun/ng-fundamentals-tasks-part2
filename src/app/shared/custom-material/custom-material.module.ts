@@ -17,6 +17,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSlideToggleModule, MatCheckboxModule, MatSnackBarModule,
+  MatTabsModule,
 } from '@angular/material';
 
 const MAT_COMPONENTS = [
@@ -36,6 +37,7 @@ const MAT_COMPONENTS = [
   MatSlideToggleModule,
   MatCheckboxModule,
   MatSnackBarModule,
+  MatTabsModule,
 ];
 
 @NgModule({
